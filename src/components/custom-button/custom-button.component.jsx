@@ -5,9 +5,13 @@ import './custom-button.styles.scss'
 // stateless
 // children are for multiple uses, eg sign in out, to be resuable
 
-const CustomButton = ({children, isGoogleSignIn, ...otherProps}) => (
+const CustomButton = ({children, isGoogleSignIn, inverted, ...otherProps}) => (
     <button 
-        className={`${isGoogleSignIn ? 'google-sign-in' : ''} custom-button`} { ...otherProps}> 
+        className={`
+            ${inverted ? 'inverted' : ''}
+            ${isGoogleSignIn ? 'google-sign-in' : ''} custom-button`} 
+            { ...otherProps}
+        > 
         {children} 
     </button>
 );
